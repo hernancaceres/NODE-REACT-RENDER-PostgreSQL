@@ -1,5 +1,7 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
+import {FRONTEND_URL} from "./config.js"
 
 const app = express();
 
@@ -9,6 +11,12 @@ import projectRoutes from "./routes/projects.routes.js";
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use(cors({
+    origin: FRONTEND_URL,  // Reemplaza con la URL de tu aplicación de React
+    credentials: true,
+}));
+
 
 // Routes
 app.use("/api/projects", projectRoutes);
