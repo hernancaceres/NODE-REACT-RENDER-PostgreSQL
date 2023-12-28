@@ -17,12 +17,12 @@ app.use(express.json());
 //     credentials: true,
 // }));
 
-// app.use(cors({
-//     origin: "https://node-react-render-postgresql-front.onrender.com",  // Reemplaza con la URL de tu aplicación de React
-//     credentials: true,
-// }));
+app.use(cors({
+    origin: "https://node-react-render-postgresql-front.onrender.com",
 
-app.use(cors());
+}));
+
+
 
 // Routes
 app.use("/api/projects", projectRoutes);
