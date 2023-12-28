@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use(cors({
-    origin: "https://node-react-render-postgresql-front.onrender.com",  // Reemplaza con la URL de tu aplicación de React
+    origin: FRONTEND_URL,  // Reemplaza con la URL de tu aplicación de React
     credentials: true,
 }));
 
