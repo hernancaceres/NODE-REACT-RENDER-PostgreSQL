@@ -12,15 +12,18 @@ import projectRoutes from "./routes/projects.routes.js";
 app.use(morgan("dev"));
 app.use(express.json());
 
+app.use(cors({
+    origin: FRONTEND_URL,  // Reemplaza con la URL de tu aplicación de React
+    credentials: true,
+}));
+
+
 // app.use(cors({
-//     origin: FRONTEND_URL,  // Reemplaza con la URL de tu aplicación de React
-//     credentials: true,
+//     origin: "https://node-react-render-postgresql-front.onrender.com",
+
 // }));
 
-app.use(cors({
-    origin: "https://node-react-render-postgresql-front.onrender.com",
 
-}));
 
 
 
